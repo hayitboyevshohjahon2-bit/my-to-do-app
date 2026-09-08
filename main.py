@@ -16,3 +16,4 @@ if camera_image:
     gray_camera_img = img.convert("L")
     st.image(gray_camera_img)
 
+savSARGASF
