@@ -1,4 +1,18 @@
-trrxcvgjhfcrtyfjhyt
+import streamlit as st
+from PIL import Image
 
+uploaded_image = st.file_uploader("Upload Image")
 
-sdfghjkjytrfd
+with st.expander("Start camera"):
+    camera_image = st.camera_input("Camera")
+
+if uploaded_image:
+    img = Image.open(uploaded_image)
+    gray_uploaded_img = img.convert("L")
+    st.image(gray_uploaded_img)
+
+if camera_image:
+    img = Image.open(camera_image)
+    gray_camera_img = img.convert("L")
+    st.image(gray_camera_img)
+
